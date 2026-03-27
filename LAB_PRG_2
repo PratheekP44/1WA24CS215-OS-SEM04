@@ -37,7 +37,7 @@ int main()
     {
         int found = 0;
 
-        // 🔴 Always check Queue 1 FIRST (RR cyclic)
+        
         for(i = 0; i < n; i++)
         {
             if(q[i] == 1 && rt[i] > 0 && at[i] <= t)
@@ -62,14 +62,14 @@ int main()
             }
         }
 
-        // 🔵 Only if NO Queue 1 process is ready
+       
         if(!found)
         {
             for(i = 0; i < n; i++)
             {
                 if(q[i] == 2 && rt[i] > 0 && at[i] <= t)
                 {
-                    // ⚠️ Run FCFS BUT check interruption
+                    
                     while(rt[i] > 0)
                     {
                         // check if any Q1 arrives → break
