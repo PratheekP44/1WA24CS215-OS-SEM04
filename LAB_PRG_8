@@ -1,0 +1,137 @@
+Program 8
+a. Sequential File Allocation
+
+#include <stdio.h>
+
+int main()
+{
+    int startBlock, length, i;
+
+    printf("Enter starting block: ");
+    scanf("%d", &startBlock);
+
+    printf("Enter length of file (number of blocks): ");
+    scanf("%d", &length);
+
+    printf("\nAllocated Blocks are:\n");
+
+    for(i = 0; i < length; i++)
+    {
+        printf("%d ", startBlock + i);
+    }
+
+    printf("\n");
+
+    return 0;
+}
+
+OUTPUT:
+
+Enter starting block: 10
+
+Enter length of file (number of blocks): 5
+
+Allocated Blocks are:
+10 11 12 13 14
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+b. Indexed File Allocation
+
+#include <stdio.h>
+
+int main()
+{
+    int indexBlock, n, i;
+    int blocks[20];
+
+    printf("Enter index block: ");
+    scanf("%d", &indexBlock);
+
+    printf("Enter number of blocks occupied by file: ");
+    scanf("%d", &n);
+
+    printf("Enter file blocks:\n");
+
+    for(i = 0; i < n; i++)
+        scanf("%d", &blocks[i]);
+
+    printf("\nIndex Block: %d\n", indexBlock);
+
+    printf("Allocated File Blocks:\n");
+
+    for(i = 0; i < n; i++)
+        printf("%d ", blocks[i]);
+
+    printf("\n");
+
+    return 0;
+}
+
+OUTPUT:
+
+Enter index block: 4
+
+Enter number of blocks occupied by file: 5
+
+Enter file blocks:
+10
+15
+22
+30
+45
+
+Index Block: 4
+
+Allocated File Blocks:
+10 15 22 30 45
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+c. Linked File Allocation
+
+#include <stdio.h>
+
+int main()
+{
+    int n, i;
+    int blocks[20];
+
+    printf("Enter number of blocks in file: ");
+    scanf("%d", &n);
+
+    printf("Enter block numbers:\n");
+
+    for(i = 0; i < n; i++)
+        scanf("%d", &blocks[i]);
+
+    printf("\nLinked Allocation Sequence:\n");
+
+    for(i = 0; i < n; i++)
+    {
+        printf("%d", blocks[i]);
+
+        if(i != n - 1)
+            printf(" -> ");
+    }
+
+    printf(" -> NULL\n");
+
+    return 0;
+}
+
+OUTPUT:
+
+Enter number of blocks in file: 5
+
+Enter block numbers:
+7
+19
+25
+33
+40
+
+Linked Allocation Sequence:
+7 -> 19 -> 25 -> 33 -> 40 -> NULL
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
