@@ -1,0 +1,138 @@
+Program 9
+a. Single Level Directory
+
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    int n, i;
+    char files[20][30];
+
+    printf("Enter number of files: ");
+    scanf("%d", &n);
+
+    printf("Enter file names:\n");
+    for(i = 0; i < n; i++)
+        scanf("%s", files[i]);
+
+    printf("\nFiles in Single Level Directory:\n");
+
+    for(i = 0; i < n; i++)
+        printf("%s\n", files[i]);
+
+    return 0;
+}
+
+OUTPUT:
+
+Enter number of files: 5
+
+Enter file names:
+file1.txt
+file2.txt
+file3.txt
+file4.txt
+file5.txt
+
+Files in Single Level Directory:
+file1.txt
+file2.txt
+file3.txt
+file4.txt
+file5.txt
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+b. Two Level Directory
+
+#include <stdio.h>
+
+int main()
+{
+    int users, files, i, j;
+
+    printf("Enter number of users: ");
+    scanf("%d", &users);
+
+    for(i = 0; i < users; i++)
+    {
+        printf("\nEnter number of files for User %d: ", i + 1);
+        scanf("%d", &files);
+
+        printf("Files of User %d:\n", i + 1);
+
+        for(j = 0; j < files; j++)
+        {
+            char fname[30];
+            scanf("%s", fname);
+        }
+    }
+
+    printf("\nTwo Level Directory Created Successfully.\n");
+
+    return 0;
+}
+
+OUTPUT:
+
+Enter number of users: 2
+
+Enter number of files for User 1: 3
+Files of User 1:
+fileA.txt
+fileB.txt
+fileC.txt
+
+Enter number of files for User 2: 2
+Files of User 2:
+fileX.txt
+fileY.txt
+
+Two Level Directory Created Successfully.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+c. Hierarchical Directory
+
+#include <stdio.h>
+
+int main()
+{
+    int mainDir, subDir, files;
+    int i, j;
+
+    printf("Enter number of main directories: ");
+    scanf("%d", &mainDir);
+
+    for(i = 0; i < mainDir; i++)
+    {
+        printf("\nEnter number of subdirectories in Directory %d: ", i + 1);
+        scanf("%d", &subDir);
+
+        for(j = 0; j < subDir; j++)
+        {
+            printf("Enter number of files in Subdirectory %d: ", j + 1);
+            scanf("%d", &files);
+        }
+    }
+
+    printf("\nHierarchical Directory Structure Created Successfully.\n");
+
+    return 0;
+}
+
+OUTPUT:
+
+Enter number of main directories: 2
+
+Enter number of subdirectories in Directory 1: 2
+Enter number of files in Subdirectory 1: 3
+Enter number of files in Subdirectory 2: 2
+
+Enter number of subdirectories in Directory 2: 1
+Enter number of files in Subdirectory 1: 4
+
+Hierarchical Directory Structure Created Successfully.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
